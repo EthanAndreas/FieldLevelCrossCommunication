@@ -1,0 +1,40 @@
+For the protocol, in C language :
+
+client 
+retrieve the information wanted (value/conf/level) by requesting the device
+args : 
+    str : ip_addr 
+    str : type (value/conf/level)
+return (in stdout):
+    str : value (if type is value)
+    str : conf (if type is conf)
+    str : level (if type is level)
+
+server 
+send the information wanted (value) to the device
+args : 
+    str : ip_addr 
+    str : type (value)
+    str : value (if type is value) 
+    str : unit (if type is value)
+
+
+detail on client conf output
+example :
+------------------------------------
+number of device : 3
+main device : 10.0.0.1
+position : bottom
+height : null (not necessary)
+secondary device : 10.0.0.2
+position : middle
+height : 2 m
+secondary device : 10.0.0.3
+position : top
+height : null (not necessary)
+density : null (not necessary)
+gas pressure : null (not necessary)
+tank height : 3 m 
+tank diameter : 1 m
+tank volume : 3 m3
+------------------------------------

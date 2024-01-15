@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Send{% endblock %}
+
+{% block header %}<h1>Send part</h1>{% endblock %}
+
+{% block content %}
+
+<div class="content">
+    <div class="form">
+        <form method="post">
+            <div id="ip-inputs">
+                <div id="ip-input" class="ip-input">
+                    <label for="ip_addr">IP Address →</label>
+                    <input type="text" id="ip_addr" name="ip_addr" required>
+                    <label for="pressure">, pressure value →</label>
+                    <input type="text" class="small" id="pressure" name="pressure" required>
+                    <label for="unit"></label>
+                    <select id="unit" name="unit" required>
+                        <option value="Pa">Pa</option>
+                        <option value="bar">bar</option>
+                        <option value="psi">psi</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="result">
+        {% if result != -1 %}
+        {% if result != -2 and result != -3 and result != -4 %}
+        <h2 class="result"><p style="color:green">Success to send</p></h2>
+        {% else %}
+        <h2 class="error">Error</h2>
+        {% if result != -2 and result != -3 and result != -4 %}
+        <p style="color:red">Server unreachable</p>
+        {% elif result != -3 and result != -4 %}
+        <p style="color:red">Address not on the network</p>
+        {% elif result != -4 %}
+        <p style="color:red">Invalid IP address</p>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

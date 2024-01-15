@@ -1,0 +1,7 @@
+.vs
+.vscode
+.emSession
+monitoring-app/__pycache__
+monitoring-app/xcom/__pycache__
+monitoring-app/utils/__pycache__
+xcom/BSP/ST/STM32F429_STM32F429ZI_Nucleo/Output/Debug/*

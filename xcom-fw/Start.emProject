@@ -1,0 +1,4 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="Start" target="8" version="2">
+  <import file_name="BSP/ST/STM32F429_STM32F429ZI_Nucleo/Start_ST_STM32F429ZI_Nucleo.emProject" />
+</solution>

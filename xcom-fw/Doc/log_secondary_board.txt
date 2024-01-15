@@ -1,0 +1,74 @@
+0:000 Main Task - INIT: emNet init started. Version 3.40d
+0:000 Main Task - *********************************************************************
+0:000 Main Task - *                        emNet Configuration                        *
+0:000 Main Task - *********************************************************************
+0:000 Main Task - * IP_DEBUG: 2
+0:000 Main Task - * Memory added: 24576 bytes
+0:000 Main Task - * Buffer configuration:
+0:000 Main Task - *   12 buffers of 256 bytes
+0:000 Main Task - *   6 buffers of 1516 bytes
+0:000 Main Task - * TCP Tx/Rx window size per socket: 4380/4380 bytes
+0:000 Main Task - * Number of interfaces added: 1
+0:000 Main Task - * Interface #0 configuration:
+0:001 Main Task - *   Type: ETH
+0:001 Main Task - *   MTU: 1500
+0:001 Main Task - *   HW addr.: 00:22:00:FF:FF:02
+0:001 Main Task - *********************************************************************
+0:001 Main Task - INIT: Link is down
+0:001 Main Task - DRIVER: Found PHY with Id 0x7 at addr 0x0
+0:002 Main Task - INIT: Init completed
+0:003 IP_Task - INIT: IP_Task started
+3:000 IP_Task - LINK: Link state changed: Half duplex, 10MHz
+3:400 IP_Task - NDP: Link-local IPv6 addr.: FE80:0000:0000:0000:0222:00FF:FEFF:FF02 added to IFace: 0
+4:000 IP_Task - DHCPc: Sending discover!
+4:001 IP_Task - DHCPc: IFace 0: Offer: IP: 192.168.0.17, Mask: 255.255.255.0, GW: 192.168.0.1.
+5:000 IP_Task - DHCPc: IP addr. checked, no conflicts
+5:000 IP_Task - DHCPc: Sending Request.
+5:992 IP_Task - DHCPc: IFace 0: Using IP: 192.168.0.17, Mask: 255.255.255.0, GW: 192.168.0.1.
+
+6:004 Webserver Parent - WEBS: Using a memory pool of 10240 bytes for 2 connections.
+12:864 IP_Task - Packet received
+12:864 Main Task - Event : data received
+12:864 IP_Task - Packet received
+12:864 Main Task - Conf sensor packet received
+12:864 IP_Task - Packet received
+12:864 Main Task - Event : data received
+12:864 IP_Task - Packet received
+12:864 Main Task - Conf sensor packet received
+12:864 IP_Task - Packet received
+12:864 Main Task - Event : data received
+12:864 Main Task - Conf tank packet received
+12:864 Main Task - Event : data received
+12:865 Main Task - Conf fluid packet received
+12:865 Main Task - Event : data received
+12:865 Main Task - Conf cycle packet received
+12:865 Main Task - Event : configuration completed
+
+12:865 Main Task - Init clock
+12:867 IP_Task - Packet received
+12:868 Main Task - Event : data received
+12:868 Main Task - TS packet received
+12:868 Main Task - TS Cycle packet received
+12:868 Main Task - Packet sent
+12:868 IP_Task - Packet received
+12:868 Main Task - Event : data received
+12:868 Main Task - TS packet received
+12:869 Main Task - TS Cycle packet received
+12:869 Main Task - Packet sent
+12:873 IP_Task - Packet received
+12:873 Main Task - Event : data received
+12:873 Main Task - TS packet received
+12:873 Main Task - TS Cycle packet received
+12:873 Main Task - Packet sent
+12:875 IP_Task - Packet received
+12:875 Main Task - Event : data received
+12:875 Main Task - TS packet received
+12:875 Main Task - TS Init packet received
+
+12:876 Main Task - Wait before launching measurement
+12:879 Interrupt - Init measurement
+
+12:919 Main Task - Event : pressure measurement
+12:919 Main Task - Packet sent
+12:959 Main Task - Event : pressure measurement
+12:959 Main Task - Packet sent

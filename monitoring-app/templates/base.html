@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href='../static/style.css'>
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+
+<body>
+    <div class="header">
+        {% block header %}
+        <div>
+            <h1>Test application</h1>
+        </div>
+        {% endblock %}
+        <div>
+            <a href="{{ url_for('home') }}" style="color:white; text-decoration:none; padding-right:10px;">Home</a>
+            <a href="{{ url_for('send') }}" style="color:white; text-decoration:none; padding-right:10px;">Send</a>
+            <a href="{{ url_for('read') }}" style="color:white; text-decoration:none; padding-right:10px;">Read</a>
+            <a href="{{ url_for('test') }}" style="color:white; text-decoration:none; margin-right: 10px">Test</a>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="logo">
+            <img src="../static/Siemens_logo.svg" alt="Siemens logo">
+        </div>
+        <div class="logo">
+            <img src="../static/TPS_logo.svg" alt="TPS logo">
+        </div>
+        <div class="right">
+            <p>All rights reserved. © 2023 TPS - Siemens</p>
+        </div>
+    </footer>
+</body>
+
+</html>

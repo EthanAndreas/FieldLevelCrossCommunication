@@ -1,0 +1,74 @@
+0:000 Main Task - INIT: emNet init started. Version 3.40d
+0:000 Main Task - *********************************************************************
+0:000 Main Task - *                        emNet Configuration                        *
+0:000 Main Task - *********************************************************************
+0:000 Main Task - * IP_DEBUG: 2
+0:000 Main Task - * Memory added: 24576 bytes
+0:000 Main Task - * Buffer configuration:
+0:000 Main Task - *   12 buffers of 256 bytes
+0:000 Main Task - *   6 buffers of 1516 bytes
+0:000 Main Task - * TCP Tx/Rx window size per socket: 4380/4380 bytes
+0:000 Main Task - * Number of interfaces added: 1
+0:000 Main Task - * Interface #0 configuration:
+0:001 Main Task - *   Type: ETH
+0:001 Main Task - *   MTU: 1500
+0:001 Main Task - *   HW addr.: 00:22:00:FF:FF:00
+0:001 Main Task - *********************************************************************
+0:001 Main Task - INIT: Link is down
+0:001 Main Task - DRIVER: Found PHY with Id 0x7 at addr 0x0
+0:002 Main Task - INIT: Init completed
+0:003 IP_Task - INIT: IP_Task started
+3:000 IP_Task - LINK: Link state changed: Half duplex, 10MHz
+3:400 IP_Task - NDP: Link-local IPv6 addr.: FE80:0000:0000:0000:0222:00FF:FEFF:FF00 added to IFace: 0
+4:000 IP_Task - DHCPc: Sending discover!
+4:001 IP_Task - DHCPc: IFace 0: Offer: IP: 192.168.0.16, Mask: 255.255.255.0, GW: 192.168.0.1.
+5:000 IP_Task - DHCPc: IP addr. checked, no conflicts
+5:000 IP_Task - DHCPc: Sending Request.
+5:994 IP_Task - DHCPc: IFace 0: Using IP: 192.168.0.16, Mask: 255.255.255.0, GW: 192.168.0.1.
+
+6:003 Webserver Parent - WEBS: Using a memory pool of 10240 bytes for 2 connections.
+10:804 Webserver Child - Conf tank packet received
+10:804 Webserver Child - Conf sensor packet received
+10:805 Webserver Child - Ping OK
+10:805 Webserver Child - Conf sensor packet received
+10:805 Webserver Child - Conf fluid packet received
+10:805 Webserver Child - Conf cycle packet received
+10:805 Webserver Child - Packet sent
+10:805 Webserver Child - Packet sent
+10:805 Webserver Child - Packet sent
+10:805 Webserver Child - Packet sent
+10:806 Webserver Child - Packet sent
+10:807 Main Task - Event : configuration completed
+
+10:807 Main Task - Init clock
+10:808 Main Task - Packet sent
+10:809 IP_Task - Packet received
+10:809 Main Task - Event : data received
+10:810 Main Task - TS packet received
+10:810 Main Task - Cycle packet received
+10:810 Main Task - Packet sent
+10:810 IP_Task - Packet received
+10:810 Main Task - Event : data received
+10:810 Main Task - TS packet received
+10:810 Main Task - Cycle packet received
+10:812 Main Task - Packet sent
+10:815 IP_Task - Packet received
+10:815 Main Task - Event : data received
+10:815 Main Task - TS packet received
+10:815 Main Task - Cycle packet received
+10:816 Main Task - Packet sent
+
+10:816 Main Task - Init latency interrupt
+10:816 Main Task - Wait before launching measurement
+10:816 Main Task - Init calculation interrupt
+10:820 Interrupt - Init measurement
+
+10:856 Main Task - Event : level calculation
+10:861 Main Task - Event : pressure measurement
+10:865 IP_Task - Packet received
+10:865 Main Task - Event : data received
+10:896 Main Task - Event : level calculation
+10:900 Main Task - Event : pressure measurement
+10:900 IP_Task - Packet received
+10:900 Main Task - Event : data received
+10:936 Main Task - Event : level calculation

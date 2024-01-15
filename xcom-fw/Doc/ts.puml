@@ -1,0 +1,71 @@
+@startuml
+
+!pragma teoz true
+
+title Xcom TS process
+
+box "Main" #Lightgreen
+box "Main Task" #Lightyellow
+participant M_MAIN_F as "Main Task FW"
+participant M_MAIN_X as "XCom Module"
+end box
+box "IP Task" #Lightgray
+participant M_IP_CB as "Callback"
+end box
+end box
+box "Network" #White
+participant N_UDP as "UDP port 3630"
+end box
+box "Secondary" #Lightblue
+box "IP Task" #Lightgray
+participant S_IP_CB as "Callback"
+end box
+box "Main Task" #Lightyellow
+participant S_MAIN_X as "XCom Module"
+participant S_MAIN_F as "Main Task FW"
+end box
+end box
+
+M_MAIN_F -> M_MAIN_F : TS process
+note right #Grey
+    Launch timer
+end note
+M_MAIN_F -> N_UDP : Send XCom TS Cycle packet
+N_UDP -> S_IP_CB : IP_Receive
+S_IP_CB -> S_MAIN_X : Callback
+S_MAIN_X -> S_MAIN_F : XCom_Decode
+S_MAIN_F -> N_UDP : Send XCom TS Cycle packet
+N_UDP -> M_IP_CB : IP_Receive
+M_IP_CB ->  M_MAIN_X : Callback
+M_MAIN_X -> M_MAIN_F : XCom_Decode
+M_MAIN_F -> M_MAIN_F : TS process
+note right #Grey
+    • Wait to receive one
+    packet from every board
+    • Calculate latency for
+    each board
+    • Calculate the new 
+    timestamp for each board
+    (the biggest latency 
+    multiplied by 4 minus
+    the latency of the 
+    destination board)
+end note
+M_MAIN_F -> N_UDP : Send XCom TS Init packet
+N_UDP -> S_IP_CB : IP_Receive
+S_IP_CB -> S_MAIN_X : Callback
+S_MAIN_X -> S_MAIN_F : XCom_Decode
+M_MAIN_F <-> S_MAIN_F : TS process
+note top #Grey
+    Wait the time indicated by the timestamp
+end note
+M_MAIN_F <-> S_MAIN_F : TS process
+note top #Grey
+    Launch measurement timer
+end note
+M_MAIN_F -> M_MAIN_F : TS process
+note right #Grey
+    Launch calculation timer
+end note
+
+@enduml

@@ -1,0 +1,80 @@
+import struct
+
+## Display
+PRINT = False
+
+# Network
+PORT = 3630
+
+# Limits
+MAX_SENSORS = 3
+
+# Unit 
+LENGTH_UNIT_METER = 0x0
+LENGTH_UNIT_FEET  = 0x1
+LENGTH_UNIT_INCH  = 0x2
+
+VOLUME_UNIT_METER3 = 0x0
+VOLUME_UNIT_LITER  = 0x1
+VOLUME_UNIT_GALLON = 0x2
+
+PRESSURE_UNIT_PASCAL = 0x0
+PRESSURE_UNIT_BAR    = 0x1
+PRESSURE_UNIT_PSI    = 0x2
+
+DENSITY_UNIT_KGBYMETER3 = 0x0
+DENSITY_UNIT_GBYCM3     = 0x1
+
+TIME_UNIT_SECOND      = 0x0
+TIME_UNIT_MILLISECOND = 0x1
+TIME_UNIT_MICROSECOND = 0x2
+
+ROLE_HIGH    = 0x0
+ROLE_DENSITY = 0x1
+ROLE_LOW     = 0x2
+
+TYPE_SECONDARY = 0x0
+TYPE_MAIN      = 0x1
+
+QUALITY_CODE_ERROR    = 0x0
+QUALITY_CODE_REEL     = 0x1
+QUALITY_CODE_SIMULATE = 0x2
+
+# Msg type
+MSG_TS       = 0x01
+MSG_CONF     = 0x02
+MSG_PRESSURE = 0x03
+MSG_LEVEL    = 0x04
+# TS type
+INIT_TS  = 0x01
+CYCLE_TS = 0x02
+# Conf type
+CONF_SEND_TANK   = 0x01
+CONF_GET_TANK    = 0x02
+CONF_SEND_SENSOR = 0x03
+CONF_GET_SENSOR  = 0x04
+CONF_SEND_FLUID  = 0x05
+CONF_GET_FLUID   = 0x06
+CONF_CYCLE       = 0x07
+# Pressure type
+SEND_PRESSURE = 0x01
+GET_PRESSURE  = 0x02
+# Level type
+SEND_LEVEL = 0x01
+GET_LEVEL  = 0x02
+
+# Frame length
+FRAME_SIZE            = struct.calcsize('!QIB')  # union not included
+TS_SIZE               = FRAME_SIZE + struct.calcsize('!BQI')
+CONF_SIZE             = struct.calcsize('!B')  # union not included
+CONF_SEND_TANK_SIZE   = FRAME_SIZE + CONF_SIZE + struct.calcsize('!IBIBIB')
+CONF_GET_TANK_SIZE    = FRAME_SIZE + CONF_SIZE
+CONF_SEND_SENSOR_SIZE = FRAME_SIZE + CONF_SIZE + struct.calcsize('!BIBIB')
+CONF_GET_SENSOR_SIZE  = FRAME_SIZE + CONF_SIZE
+CONF_SEND_FLUID_SIZE  = FRAME_SIZE + CONF_SIZE + struct.calcsize('!BIBI')
+CONF_GET_FLUID_SIZE   = FRAME_SIZE + CONF_SIZE
+CONF_CYCLE_SIZE       = FRAME_SIZE + CONF_SIZE + struct.calcsize('!IBB')
+SEND_PRESSURE_SIZE    = FRAME_SIZE + struct.calcsize('!BIBB')
+GET_PRESSURE_SIZE     = FRAME_SIZE + struct.calcsize('!B')
+SEND_LEVEL_SIZE       = FRAME_SIZE + struct.calcsize('!BI')
+GET_LEVEL_SIZE        = FRAME_SIZE + struct.calcsize('!B')

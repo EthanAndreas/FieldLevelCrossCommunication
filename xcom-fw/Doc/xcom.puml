@@ -1,0 +1,66 @@
+@startuml
+
+!pragma teoz true
+
+title XCom packet exchange process
+
+box "Board n°1" #Lightgreen
+box "Main Task" #Lightyellow
+participant B1_MAIN_F as "Main Task FW"
+participant B1_MAIN_X as "XCom Module"
+end box
+box "IP Task" #Lightgray
+participant B1_IP_CB as "Callback"
+participant B1_IP_ST as "IP-Stack"
+end box
+end box
+box "Network" #White
+participant N_UDP as "UDP port 3630"
+end box
+box "Board n°2" #Lightblue
+box "IP Task" #Lightgray
+participant B2_IP_ST as "IP-Stack"
+participant B2_IP_CB as "Callback"
+end box
+box "MAIN Task" #Lightyellow
+participant B2_MAIN_X as "XCom Module"
+participant B2_MAIN_F as "MAIN Task FW"
+end box
+end box
+
+B1_MAIN_F -> B1_MAIN_X : XCom_Init
+note bottom #Yellow
+    Create the XCom structure
+end note
+B1_MAIN_X -> B1_IP_ST : XCom_Encode
+note bottom #Yellow
+    Convert XCom structure into
+    network bytes array
+end note
+B1_IP_ST -> N_UDP : IP_Send
+N_UDP -> B2_IP_CB : IP_Receive
+B2_IP_CB -> B2_IP_CB : CB_Additional
+note left #Grey
+    • add the pointer to
+    packet bytes array to
+    the main task's mailbox
+    • set task event to
+    received data
+end note
+B2_IP_CB -> B2_MAIN_X : CB_Forward
+note bottom #Grey
+   Forward to the main task
+end note
+B2_MAIN_X -> B2_MAIN_F : XCom_Decode
+note bottom #Yellow
+    Convert network bytes
+    array into XCom structure
+    within callbacks, which :
+    • if "get" packet type : send
+    the corresponding value to
+    the sender
+    • otherwise : set task
+    event to packet's type
+end note
+
+@enduml

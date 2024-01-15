@@ -1,0 +1,146 @@
+body {
+    background-image: url('../static/minimalist.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    padding-bottom: 80px;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    text-align: left;
+    color: rgb(0, 153, 153);
+}
+
+h2.result {
+    font-size: 20px;
+    text-align: left;
+    color: rgb(0, 153, 153);
+}
+
+h2.error {
+    font-size: 20px;
+    text-align: left;
+    color: rgb(255, 0, 0);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    padding: 3px;
+    margin-left: 5px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 100px;
+    border: 1px solid black;
+}
+
+input[type="text"].small {
+    padding: 3px;
+    margin-left: 5px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 60px;
+    border: 1px solid black;
+}
+
+select {
+    padding: 3px;
+    margin-left: 5px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 50px;
+    border: 1px solid black;
+}
+
+select.small {
+    padding: 3px;
+    margin-left: 5px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 40px;
+    border: 1px solid black;
+}
+
+button[type="submit"] {
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(0, 153, 153);
+    font-size: 1.2em;
+}
+
+.content {
+    align-items: left;
+    padding: 20px;
+}
+
+.result {
+    width: 50%;
+    text-align: left;
+}
+
+.form {
+    width: 50%;
+    text-align: left;
+}
+
+.graph {
+    background-color: transparent;
+}
+
+.logo {
+    margin-right: 20px;
+}
+
+.logo img {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.right {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.right p {
+    font-size: 12px;
+    margin: 0;
+}

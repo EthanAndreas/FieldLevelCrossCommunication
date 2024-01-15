@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block title %}Test{% endblock %}
+
+{% block header %}<h1>Test part</h1>{% endblock %}
+
+{% block content %}
+
+<div class="content">
+    <div class="form">
+        <form method="post">
+            <label for="num_addr">Select number of IP Addresses:</label>
+            <select id="num_addr" class="small" name="num_addr" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select><br><br>
+            <div id="ip-inputs">
+                <div id="ip-input" class="ip-input">
+                    <label for="ip_addr_1">IP Address →</label>
+                    <input type="text" id="ip_addr_1" name="ip_addr_1" required>
+                    <label for="pressure_1">, pressure value →</label>
+                    <input type="text" class="small" id="pressure_1" name="pressure_1" required>
+                    <label for="unit_1"></label>
+                    <select id="unit_1" name="unit_1" required>
+                        <option value="Pa">Pa</option>
+                        <option value="bar">bar</option>
+                        <option value="psi">psi</option>
+                    </select>
+                </div>
+                <div id="ip-input-2" class="ip-input" style="display: none;">
+                    <label for="ip_addr_2">IP Address →</label>
+                    <input type="text" id="ip_addr_2" name="ip_addr_2">
+                    <label for="pressure_2">, pressure value →</label>
+                    <input type="text" class="small" id="pressure_2" name="pressure_2">
+                    <label for="unit_2"></label>
+                    <select id="unit_2" name="unit_2">
+                        <option value="Pa">Pa</option>
+                        <option value="bar">bar</option>
+                        <option value="psi">psi</option>
+                    </select>
+                </div>
+                <div id="ip-input-3" class="ip-input" style="display: none;">
+                    <label for="ip_addr_3">IP Address →</label>
+                    <input type="text" id="ip_addr_3" name="ip_addr_3">
+                    <label for="pressure_3">, pressure value →</label>
+                    <input type="text" class="small" id="pressure_3" name="pressure_3">
+                    <label for="unit_3"></label>
+                    <select id="unit_3" name="unit_3">
+                        <option value="Pa">Pa</option>
+                        <option value="bar">bar</option>
+                        <option value="psi">psi</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="result">
+        {% if calculate_level != -1 and retrieve_level != -1 %}
+        {% if retrieve_level >= 0 and calculate_level >= 0 %}
+        <h2 class="result">Result</h2>
+        <p>Retrieve level: {{ retrieve_level }} m</p>
+        <p>Calculate level: {{ calculate_level }} m</p>
+        {% else %}
+        <h2 class="error">Error</h2>
+        {% if retrieve_level == -2 or calculate_level == -2 %}
+        <p style="color:red">Fail to request the configuration</p>
+        {% elif retrieve_level == -3 %}
+        <p style="color:red">Fail to request the level</p>
+        {% elif calculate_level == -3 %}
+        <p style="color:red">Invalid number of sensors</p>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+
+<script>
+    const numAddrSelect = document.querySelector('#num_addr');
+    const ipInputs = document.querySelectorAll('.ip-input');
+
+    // Add event listener to num_addr select element
+    numAddrSelect.addEventListener('change', () => {
+        const numAddr = numAddrSelect.value;
+        showIpInputs(numAddr);
+    });
+
+    // Show or hide the appropriate number of IP address input fields
+    function showIpInputs(numAddr) {
+        ipInputs.forEach((input, i) => {
+            if (i < numAddr) {
+                input.style.display = 'block';
+            } else {
+                input.style.display = 'none';
+            }
+        });
+    }
+
+    // Make required all the field of ip address 2 or/and 3 if they are displayed
+    numAddrSelect.addEventListener('change', () => {
+        const numAddr = parseInt(numAddrSelect.value);
+
+        ipInputs.forEach((input, i) => {
+            const ipInput = input.querySelector(`#ip_addr_${i + 1}`);
+            const pressureInput = input.querySelector(`#pressure_${i + 1}`);
+            const unitSelect = input.querySelector(`#unit_${i + 1}`);
+
+            if (i < numAddr) {
+                ipInput.required = true;
+                pressureInput.required = true;
+                unitSelect.required = true;
+                input.style.display = 'block';
+            } else {
+                ipInput.required = false;
+                pressureInput.required = false;
+                unitSelect.required = false;
+                input.style.display = 'none';
+            }
+        });
+    });
+
+</script>
+
+{% endblock %}

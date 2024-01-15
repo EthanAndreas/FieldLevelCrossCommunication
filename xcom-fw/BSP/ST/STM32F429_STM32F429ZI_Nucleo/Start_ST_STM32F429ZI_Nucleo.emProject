@@ -1,0 +1,353 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="Start_STM32F429ZI_Nucleo" target="8" version="2">
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG=1"
+    gcc_debugging_level="Level 3"
+    gcc_optimization_level="None" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_optimization_level="Level 3" />
+  <configuration
+    Name="Release_SystemView"
+    c_preprocessor_definitions="NDEBUG;OS_LIBMODE_SP;USE_SYSTEMVIEW=1"
+    gcc_debugging_level="Level 3"
+    gcc_optimization_level="Level 3" />
+  <project Name="Start_STM32F429ZI_Nucleo">
+    <configuration
+      LIBRARY_IO_TYPE="RTT"
+      Name="Common"
+      Placement="Flash"
+      Target="STM32F429ZI"
+      arm_architecture="v7EM"
+      arm_compiler_variant="SEGGER"
+      arm_core_type="Cortex-M4"
+      arm_endian="Little"
+      arm_fp_abi="SoftFP"
+      arm_fpu_type="FPv4-SP-D16"
+      arm_linker_allow_multiple_definition="No"
+      arm_linker_heap_size="1280"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="1024"
+      arm_linker_variant="SEGGER"
+      arm_rtl_variant="SEGGER"
+      arm_target_device_name="STM32F429ZI"
+      arm_target_interface_type="SWD"
+      build_intermediate_directory="$(ProjectDir)/Output/$(Configuration)/Obj"
+      build_output_directory="$(ProjectDir)/Output/$(Configuration)"
+      c_additional_options="-Weverything;-Wno-reserved-id-macro;-Wno-documentation-unknown-command;-Wno-implicit-fallthrough;-Wno-implicit-int-conversion;-Wno-padded;-Wno-sign-conversion;-Wno-cast-align;-Wno-cast-qual;-Wno-missing-noreturn;-Wno-extra-semi-stmt;-Wno-unused-macros;-Wno-missing-variable-declarations;-Wno-switch-enum;-Wno-bad-function-cast;-Wno-unreachable-code;-Wno-shorten-64-to-32;-Wno-c11-extensions;-Wno-documentation;-Wall;-Wextra;-Wunused-variable;-Wuninitialized;-Wmissing-field-initializers;-Wundef;-ffunction-sections;-fdata-sections"
+      c_preprocessor_definitions="USE_RTT=1;IP_SUPPORT_IPV6=1;WEBS_USE_SAMPLE_2018=1;HSE_VALUE=8000000;STM32F429_439xx;STM32F429xx;"
+      c_user_include_directories="$(ProjectDir)/Setup;$(ProjectDir)/Setup/CoreSupport;$(ProjectDir)/Setup/DeviceSupport;$(ProjectDir)/../../../Application/GUI/SEGGERDEMO;$(ProjectDir)/../../../Application/GUI/SEGGERDEMO/Src;$(ProjectDir)/../../../Application/Inc;$(ProjectDir)/../../../Application/SEGGERDEMO;$(ProjectDir)/../../../Application/SEGGERDEMO/Src;$(ProjectDir)/../../../COMPRESS/Config;$(ProjectDir)/../../../COMPRESS/Inc;$(ProjectDir)/../../../CRYPTO/Config;$(ProjectDir)/../../../CRYPTO/Inc;$(ProjectDir)/../../../FS/Config;$(ProjectDir)/../../../FS/Inc;$(ProjectDir)/../../../FS/Setup/STM32F429_ST_STM32F429ZI_Nucleo;$(ProjectDir)/../../../GUI/Config;$(ProjectDir)/../../../GUI/Inc;$(ProjectDir)/../../../GUI/Setup/STM32F429_ST_STM32F429ZI_Nucleo;$(ProjectDir)/../../../IOT/Config;$(ProjectDir)/../../../IOT/Inc;$(ProjectDir)/../../../IP/Config;$(ProjectDir)/../../../IP/Inc;$(ProjectDir)/../../../IP/Setup/IP_FS/FS_RO_2018/Generated;$(ProjectDir)/../../../LIB/Inc;$(ProjectDir)/../../../MB/Config;$(ProjectDir)/../../../MB/Inc;$(ProjectDir)/../../../OS/Config;$(ProjectDir)/../../../OS/Inc;$(ProjectDir)/../../../SECURE/Config;$(ProjectDir)/../../../SECURE/Inc;$(ProjectDir)/../../../SECURE/Keys;$(ProjectDir)/../../../SEGGER;$(ProjectDir)/../../../SEGGER/Config;$(ProjectDir)/../../../SEGGER/Inc;$(ProjectDir)/../../../SEGGER/Syscalls;$(ProjectDir)/../../../SEGGER/SystemView;$(ProjectDir)/../../../SSH/Config;$(ProjectDir)/../../../SSH/Inc;$(ProjectDir)/../../../SSL/Certificates;$(ProjectDir)/../../../SSL/Config;$(ProjectDir)/../../../SSL/Inc;$(ProjectDir)/../../../USB-D/Config;$(ProjectDir)/../../../USB-D/Inc;$(ProjectDir)/../../../USB-H/Config;$(ProjectDir)/../../../USB-H/Inc"
+      debug_register_definition_file="Setup/STM32F429x_Registers.xml"
+      debug_stack_pointer_start="__stack_end__"
+      debug_target_connection="J-Link"
+      debug_threads_script="$(ProjectDir)/Setup/embOSPluginSES.js"
+      gcc_enable_all_warnings="Yes"
+      gcc_entry_point="Reset_Handler"
+      link_linker_script_file="Setup/STM32F4xx_Flash_CCM.icf"
+      linker_additional_options="--gc-sections"
+      linker_memory_map_file="Setup/STM32F429ZI_MemoryMap.xml"
+      linker_printf_fmt_level="long"
+      linker_printf_fp_enabled="Yes"
+      linker_printf_width_precision_supported="Yes"
+      linker_scanf_fp_enabled="Yes"
+      project_directory=""
+      project_type="Executable"
+      speed="8000"
+      target_reset_script="Reset();"
+      target_script_file="Setup/STM32F4xx_Target.js"
+      target_trace_initialize_script="EnableTrace(&quot;$(TraceInterfaceType)&quot;)" />
+    <configuration
+      Name="Debug"
+      WARNING_LEVEL="4 (All)"
+      c_include_files=""
+      c_preprocessor_definitions=""
+      c_user_include_directories=".;$(ProjectDir)/../../../CMSIS/;$(ProjectDir)/../../../STM32F4xx_StdPeriph_Driver/inc/;$(ProjectDir)/../../../Application/;$(ProjectDir)/../../../Application/Calculation/;$(ProjectDir)/../../../Application/Configuration/;$(ProjectDir)/../../../Application/Internal/;$(ProjectDir)/../../../Application/Measurement/;$(ProjectDir)/../../../Application/Network/;$(ProjectDir)/../../../Application/Task/;$(ProjectDir)/../../../Application/TS/;$(ProjectDir)/../../../Application/XCom_Protocol/"
+      c_user_include_directories_c_only=""
+      gcc_strict_prototypes_warning="Yes"
+      gcc_uninitialized_variables_warning="Yes"
+      gcc_unused_variable_warning="Yes" />
+    <folder Name="Application">
+      <folder Name="Calculation">
+        <file file_name="../../../Application/Calculation/Calculation.c" />
+        <file file_name="../../../Application/Calculation/Calculation.h" />
+      </folder>
+      <folder Name="Configuration">
+        <folder Name="assets">
+          <file file_name="../../../Application/Configuration/assets/Siemens_logo.h" />
+          <file file_name="../../../Application/Configuration/assets/TPS_logo.h" />
+          <file file_name="../../../Application/Configuration/assets/background.h" />
+          <file file_name="../../../Application/Configuration/assets/index.h" />
+          <file file_name="../../../Application/Configuration/assets/script.h" />
+          <file file_name="../../../Application/Configuration/assets/style.h" />
+        </folder>
+        <file file_name="../../../Application/Configuration/Configuration.c" />
+        <file file_name="../../../Application/Configuration/Configuration.h" />
+        <file file_name="../../../Application/Configuration/Webserver.c" />
+      </folder>
+      <folder Name="Internal">
+        <file file_name="../../../Application/Internal/Internal.c" />
+        <file file_name="../../../Application/Internal/Internal.h" />
+      </folder>
+      <folder Name="Measurement">
+        <file file_name="../../../Application/Measurement/Measurement.c" />
+        <file file_name="../../../Application/Measurement/Measurement.h" />
+      </folder>
+      <folder Name="Network">
+        <file file_name="../../../Application/Network/IP_stack.c" />
+        <file file_name="../../../Application/Network/IP_stack.h" />
+        <file file_name="../../../Application/Network/UDP_send.c" />
+        <file file_name="../../../Application/Network/UDP_send.h" />
+      </folder>
+      <folder Name="TS">
+        <file file_name="../../../Application/TS/Time_synchro.c" />
+        <file file_name="../../../Application/TS/Time_synchro.h" />
+        <file file_name="../../../Application/TS/Timer.c" />
+        <file file_name="../../../Application/TS/Timer.h" />
+      </folder>
+      <folder Name="Task">
+        <file file_name="../../../Application/Task/Task.c" />
+        <file file_name="../../../Application/Task/Task.h" />
+      </folder>
+      <folder Name="XCom_Protocol">
+        <file file_name="../../../Application/XCom_Protocol/XCom_callbacks.c" />
+        <file file_name="../../../Application/XCom_Protocol/XCom_callbacks.h" />
+        <file file_name="../../../Application/XCom_Protocol/XCom_decode.c" />
+        <file file_name="../../../Application/XCom_Protocol/XCom_decode.h" />
+        <file file_name="../../../Application/XCom_Protocol/XCom_encode.c" />
+        <file file_name="../../../Application/XCom_Protocol/XCom_encode.h" />
+        <file file_name="../../../Application/XCom_Protocol/XCom_free.c" />
+        <file file_name="../../../Application/XCom_Protocol/XCom_free.h" />
+        <file file_name="../../../Application/XCom_Protocol/XCom_helper.c" />
+        <file file_name="../../../Application/XCom_Protocol/XCom_helper.h" />
+        <file file_name="../../../Application/XCom_Protocol/XCom_init.c" />
+        <file file_name="../../../Application/XCom_Protocol/XCom_init.h" />
+        <file file_name="../../../Application/XCom_Protocol/XCom_protocol.h" />
+        <file file_name="../../../Application/XCom_Protocol/XCom_unit.h" />
+      </folder>
+      <file file_name="../../../Application/Main.c" />
+    </folder>
+    <folder Name="CMSIS">
+      <file file_name="../../../CMSIS/stm32f4xx.h" />
+      <file file_name="../../../CMSIS/system_stm32f4xx.h" />
+    </folder>
+    <folder Name="IP">
+      <folder Name="Config">
+        <file file_name="../../../IP/Config/IP_Conf.h" />
+        <file file_name="../../../IP/Config/IP_ConfigIO.c" />
+        <file file_name="../../../IP/Config/WEBS_Conf.h" />
+      </folder>
+      <folder Name="Inc">
+        <file file_name="../../../IP/Inc/BSP_IP.h" />
+        <file file_name="../../../IP/Inc/IP.h" />
+        <file file_name="../../../IP/Inc/IPV6_IPv6.h" />
+        <file file_name="../../../IP/Inc/IP_ConfDefaults.h" />
+        <file file_name="../../../IP/Inc/IP_FS.h" />
+        <file file_name="../../../IP/Inc/IP_NI_SYNOPSYS.h" />
+        <file file_name="../../../IP/Inc/IP_Socket.h" />
+        <file file_name="../../../IP/Inc/IP_TCP.h" />
+        <file file_name="../../../IP/Inc/IP_UTIL.h" />
+        <file file_name="../../../IP/Inc/IP_WEBSOCKET.h" />
+        <file file_name="../../../IP/Inc/IP_Webserver.h" />
+      </folder>
+      <folder Name="Lib">
+        <file file_name="../../../IP/Lib/libIP_v7m_t_vfpv4_le_d.a">
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+          <configuration
+            Name="Release_SystemView"
+            build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="../../../IP/Lib/libIP_v7m_t_vfpv4_le_r.a">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </file>
+      </folder>
+      <folder Name="OS">
+        <file file_name="../../../IP/OS/IP_OS_embOS.c" />
+      </folder>
+      <folder Name="Setup">
+        <folder Name="IP_FS">
+          <folder Name="FS_RO">
+            <file file_name="IP_FS_ReadOnly.c" />
+          </folder>
+        </folder>
+        <folder Name="STM32F429_ST_STM32F429ZI_Nucleo">
+          <folder Name="Config">
+            <folder Name="Excluded">
+              <configuration Name="Common" build_exclude_from_build="Yes" />
+              <file file_name="IP_Config_IP_over_USB.c" />
+              <file file_name="IP_Config_USBH_LAN.c" />
+            </folder>
+            <file file_name="IP_Config_STM32F429_ETH.c" />
+          </folder>
+          <file file_name="BSP_IP.c" />
+        </folder>
+      </folder>
+    </folder>
+    <folder Name="OS">
+      <folder Name="Config">
+        <file file_name="../../../OS/Config/OS_Config.h" />
+      </folder>
+      <folder Name="Inc">
+        <file file_name="../../../OS/Inc/BSP.h" />
+        <file file_name="../../../OS/Inc/JLINKMEM.h" />
+        <file file_name="../../../OS/Inc/RTOS.h" />
+        <file file_name="../../../OS/Inc/UDPCOM.h" />
+      </folder>
+      <folder Name="Lib">
+        <file file_name="../../../OS/Lib/libos_v7m_t_vfpv4_le_dp.a">
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+          <configuration
+            Name="Release_SystemView"
+            build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="../../../OS/Lib/libos_v7m_t_vfpv4_le_r.a">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration
+            Name="Release_SystemView"
+            build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="../../../OS/Lib/libos_v7m_t_vfpv4_le_sp.a">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
+      </folder>
+      <folder Name="Setup">
+        <folder Name="CoreSupport">
+          <file file_name="Setup/CoreSupport/cmsis_compiler.h" />
+          <file file_name="Setup/CoreSupport/cmsis_gcc.h" />
+          <file file_name="Setup/CoreSupport/cmsis_version.h" />
+          <file file_name="Setup/CoreSupport/core_cm4.h" />
+          <file file_name="Setup/CoreSupport/mpu_armv7.h" />
+        </folder>
+        <folder Name="DeviceSupport">
+          <file file_name="Setup/DeviceSupport/STM32F429x_Vectors.s" />
+          <file file_name="Setup/DeviceSupport/STM32F4xx_Startup.s" />
+          <file file_name="Setup/DeviceSupport/stm32f4xx.h">
+            <configuration Name="Debug" build_exclude_from_build="No" />
+          </file>
+          <file file_name="Setup/DeviceSupport/system_stm32f4xx.c" />
+          <file file_name="Setup/DeviceSupport/system_stm32f4xx.h" />
+        </folder>
+        <file file_name="Setup/BSP.c" />
+        <file file_name="Setup/HardFaultHandler.S" />
+        <file file_name="Setup/JLINKMEM_Process.c" />
+        <file file_name="Setup/OS_Error.c" />
+        <file file_name="Setup/OS_ThreadSafe.c" />
+        <file file_name="Setup/RTOSInit_STM32F4xx.c" />
+        <file file_name="Setup/SEGGER_RTT_Conf.h" />
+        <file file_name="Setup/SEGGER_SYSVIEW_Conf.h" />
+        <file file_name="Setup/SEGGER_SYSVIEW_Config_embOS.c" />
+        <file file_name="Setup/SEGGER_THUMB_Startup.s" />
+      </folder>
+    </folder>
+    <folder Name="SEGGER">
+      <folder Name="Config">
+        <file file_name="../../../SEGGER/Config/SEGGER_MEM_Conf.h" />
+      </folder>
+      <folder Name="Inc">
+        <file file_name="../../../SEGGER/Inc/Global.h" />
+        <file file_name="../../../SEGGER/Inc/SEGGER.h" />
+        <file file_name="../../../SEGGER/Inc/SEGGER_CRC.h" />
+        <file file_name="../../../SEGGER/Inc/SEGGER_MEM.h" />
+        <file file_name="../../../SEGGER/Inc/SEGGER_MEM_ConfDefaults.h" />
+        <file file_name="../../../SEGGER/Inc/SEGGER_RTT.h" />
+        <file file_name="../../../SEGGER/Inc/SEGGER_SHELL.h" />
+        <file file_name="../../../SEGGER/Inc/SEGGER_SYS.h" />
+        <file file_name="../../../SEGGER/Inc/SEGGER_UTIL.h" />
+      </folder>
+      <folder Name="Lib">
+        <file file_name="../../../SEGGER/Lib/libSEGGER_v7m_t_vfpv4_le_d.a">
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+          <configuration
+            Name="Release_SystemView"
+            build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="../../../SEGGER/Lib/libSEGGER_v7m_t_vfpv4_le_r.a">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration
+            Name="Release_SystemView"
+            build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="../../../SEGGER/Lib/libSEGGER_v7m_t_vfpv4_le_sp.a">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
+      </folder>
+      <folder Name="RTT">
+        <file file_name="../../../SEGGER/RTT/SEGGER_RTT.c" />
+        <file file_name="../../../SEGGER/RTT/SEGGER_RTT_ASM_ARMv7M.S" />
+        <file file_name="../../../SEGGER/RTT/SEGGER_RTT_printf.c" />
+      </folder>
+      <folder Name="SYS">
+        <file file_name="../../../SEGGER/SYS/SEGGER_SYS.c" />
+        <file file_name="../../../SEGGER/SYS/SEGGER_SYS.h" />
+        <file file_name="../../../SEGGER/SYS/SEGGER_SYS_IO.c" />
+        <file file_name="../../../SEGGER/SYS/SEGGER_SYS_IO_ConfDefaults.h" />
+        <file file_name="../../../SEGGER/SYS/SEGGER_SYS_IO_RTT.c" />
+        <file file_name="../../../SEGGER/SYS/SEGGER_SYS_IO_printf.c" />
+        <file file_name="../../../SEGGER/SYS/SEGGER_SYS_IP_embOSIP.c" />
+        <file file_name="../../../SEGGER/SYS/SEGGER_SYS_OS_embOS.c" />
+        <file file_name="../../../SEGGER/SYS/SEGGER_SYS_embOS.c" />
+      </folder>
+      <folder Name="SystemView">
+        <file file_name="../../../SEGGER/SystemView/SEGGER_SYSVIEW.c" />
+        <file file_name="../../../SEGGER/SystemView/SEGGER_SYSVIEW.h" />
+        <file file_name="../../../SEGGER/SystemView/SEGGER_SYSVIEW_ConfDefaults.h" />
+        <file file_name="../../../SEGGER/SystemView/SEGGER_SYSVIEW_Int.h" />
+        <file file_name="../../../SEGGER/SystemView/SEGGER_SYSVIEW_embOS.c" />
+        <file file_name="../../../SEGGER/SystemView/SEGGER_SYSVIEW_embOS.h" />
+      </folder>
+      <file file_name="../../../SEGGER/SEGGER_HardFaultHandler.c" />
+    </folder>
+    <folder Name="STM32F4xx_StdPeriph_Driver">
+      <folder Name="inc">
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/misc.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dbgmcu.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dma.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dma2d.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_exti.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_flash.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_flash_ramfunc.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_fmc.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_iwdg.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_lptim.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_pwr.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_rcc.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_rng.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_rtc.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_syscfg.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_tim.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_usart.h" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_wwdg.h" />
+      </folder>
+      <folder Name="src">
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/misc.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dbgmcu.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dma.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dma2d.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dsi.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_exti.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash_ramfunc.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fmc.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_iwdg.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_lptim.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_pwr.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rng.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rtc.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_syscfg.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c" />
+        <file file_name="../../../STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.c" />
+      </folder>
+    </folder>
+    <file file_name="../../../License.txt" />
+    <file file_name="../../../ReadMe.txt" />
+  </project>
+</solution>
