@@ -1,4 +1,4 @@
-# <img src="assets/xcom.png" alt="Logo" width="10%"/> Field Level Cross Communication
+# <img src="assets/xcom.png" alt="Logo" width="3%"/> Field Level Cross Communication
 
 [![author](https://img.shields.io/badge/author-EthanAndreas-blue)](https://github.com/EthanAndreas)
 [![author](https://img.shields.io/badge/author-LosKeeper-blue)](https://github.com/LosKeeper)
