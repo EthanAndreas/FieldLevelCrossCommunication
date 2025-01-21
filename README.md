@@ -1,6 +1,6 @@
 <div style="display: flex; align-items: center;">
   <img src="assets/xcom.png" alt="Logo" style="height: 50px; width: 50px; margin-right: 10px;">
-  <h1>Field Level Cross Communication</h1>
+  <span style="font-size: 2em;">Field Level Cross Communication</span>
 </div>
 
 [![author](https://img.shields.io/badge/author-EthanAndreas-blue)](https://github.com/EthanAndreas)
