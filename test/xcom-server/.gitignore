@@ -1,0 +1,7 @@
+.vs
+.vscode
+build
+obj
+windows/.vs
+windows/Debug
+windows/server/Debug

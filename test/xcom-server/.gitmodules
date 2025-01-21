@@ -1,0 +1,3 @@
+[submodule "XCom_Protocol"]
+	path = XCom_Protocol
+	url = git@code.siemens.com:TI_AT/SP129/flcc/xcom.git
