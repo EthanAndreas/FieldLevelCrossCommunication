@@ -1,4 +1,4 @@
-![Logo](assets/xcom.svg)
+![Logo](assets/xcom.png)
 
 # Field Level Cross Communication
 
