@@ -1,8 +1,0 @@
-speed 4000
-si SWD
-r
-sleep 10
-loadfile Start_STM32F429ZI_Nucleo.hex
-r
-g
-q
